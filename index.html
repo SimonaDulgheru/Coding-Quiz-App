@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Quiz</title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<div class="container">
+			<h1>Coding Quiz</h1>
+			<div class="quiz-display hide">
+				<div class="message"></div>
+				<section id="stopWatch">
+					Timer
+					<p id="timer" class="hide">20</p>
+				</section>
+
+				<section id="score-display">
+					Score
+					<p id="score"></p>
+					<p id="fulltime"></p>
+				</section>
+
+				<div id="quiz-container" class="hide">
+					<div id="question" class="question-number">
+						<h3>
+							Question<span class="question-num-value">1</span>of
+							<span class="total-questions"></span>
+						</h3>
+						<br />
+						<br />
+					</div>
+					<div class="question"></div>
+
+					<div id="answers-btn " class="options">
+						<!-- <button class="btn"></button>
+					<button class="btn"></button>
+					<button class="btn"></button>
+					<button class="btn"></button> -->
+					</div>
+				</div>
+				<br />
+				<br />
+			</div>
+
+			<div class="controls">
+				<button id="start-btn" class="start-btn btn hide">
+					Start
+				</button>
+
+				<button id="next-btn" class="next-btn btn hide">Next</button
+				><br />
+				<button id="restart-btn" class="restart-btn btn hide">
+					Restart?</button
+				><br />
+				<button id="finish-btn" class="finish-btn btn hide">
+					Finish</button
+				><br />
+			</div>
+
+			<div id="result" class="container-result hide"></div>
+		</div>
+
+		<script src="script.js"></script>
+		<script src="data.js"></script>
+	</body>
+</html>
