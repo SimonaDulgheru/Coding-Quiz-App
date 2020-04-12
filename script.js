@@ -2,38 +2,66 @@ const questions = [
 	{
 		question: 'What does CSS stand for?',
 		answers: [
-			{ text: 'Creative Style Sheet', correct: true },
-			{ text: ' Sheet', correct: false },
-			{ text: 'Cascading Style Sheet', correct: false },
-			{ text: ' Cascading', correct: false },
+			{ text: 'Creative Style Sheet', correct: false },
+			{ text: ' Computer Style Sheet', correct: false },
+			{ text: 'Cascading Style Sheet', correct: true },
+			{ text: 'Colorful Style Sheet', correct: false },
 		],
 	},
 	{
 		question:
 			'Where in an HTML document is the correct place to refer to an external style sheet?',
 		answers: [
-			{ text: 'Creative Style Sheet', correct: true },
-			{ text: 'Computer Style Sheet', correct: false },
-			{ text: 'Cascading Style Sheet', correct: false },
-			{ text: ' Sheet', correct: false },
+			{ text: 'In the <head> section', correct: true },
+			{ text: 'At the end of the document', correct: false },
+			{ text: 'In the <body> section', correct: false },
+			{ text: 'In the <footer> section', correct: false },
 		],
 	},
 	{
 		question: 'Which HTML tag is used to define an internal style sheet?',
 		answers: [
-			{ text: 'Creative Style Sheet', correct: true },
-			{ text: 'Computer Style Sheet', correct: false },
-			{ text: 'Cascading Style Sheet', correct: false },
-			{ text: ' Sheet', correct: false },
+			{ text: '<css>', correct: false },
+			{ text: '<style>', correct: true },
+			{ text: '<script>', correct: false },
+			{ text: '<link>', correct: false },
+		],
+	},
+	{
+		question: 'How do you insert a comment in a CSS file?',
+		answers: [
+			{ text: '//this is a comment', correct: false },
+			{ text: '//this is a comment//', correct: false },
+			{ text: '/*this is a comment*/', correct: true },
+			{ text: '<this is a comment>', correct: false },
 		],
 	},
 	{
 		question: 'Which property is used to change the background color?',
 		answers: [
-			{ text: 'Creative Style Sheet', correct: true },
-			{ text: 'Computer Style Sheet', correct: false },
-			{ text: 'Cascading Style Sheet', correct: false },
-			{ text: ' Sheet', correct: false },
+			{ text: 'color', correct: false },
+			{ text: 'background-color', correct: true },
+			{ text: 'bgcolor', correct: false },
+			{ text: 'background', correct: true },
+		],
+	},
+	{
+		question:
+			'Which CSS property is used to change the text color of an element?',
+		answers: [
+			{ text: 'textcolor', correct: false },
+			{ text: 'text-color', correct: false },
+			{ text: 'bgcolor', correct: false },
+			{ text: 'color', correct: true },
+		],
+	},
+	{
+		question: 'Which CSS property controls the text size?',
+		answers: [
+			{ text: 'text-style', correct: false },
+			{ text: 'font-size', correct: true },
+			{ text: 'font-style', correct: false },
+			{ text: 'text-size', correct: false },
 		],
 	},
 ];
@@ -61,7 +89,7 @@ let score;
 
 let index = 0;
 totalQ.textContent = questions.length;
-let secondsLeft = 20;
+let secondsLeft;
 
 let shuffledQuestions, questionIndex; //currentquestionIndex
 
@@ -70,7 +98,9 @@ let shuffledQuestions, questionIndex; //currentquestionIndex
 window.onload = () => {
 	timer.classList.remove('hide');
 	startBtn.classList.remove('hide');
-	// let secondsLeft = 20;
+	message.classList.remove('hide');
+	secondsLeft = 5;
+	timer.textContent = secondsLeft;
 	score = 0;
 	showScore.textContent = score;
 	console.log(score);
@@ -87,7 +117,8 @@ const currentDate = () => {
 	console.log(today);
 };
 
-startBtn.addEventListener('click', function setTime() {
+startBtn.addEventListener('click', setTime);
+function setTime() {
 	score = 0;
 	startQuiz();
 	// randomQuestion();
@@ -101,17 +132,30 @@ startBtn.addEventListener('click', function setTime() {
 			showMessage();
 		}
 	}, 1000);
-});
+}
 
 const showMessage = () => {
 	if (secondsLeft === 0) {
-		const alertBox = document.createElement('div');
+		const alertBox = document.createElement('p');
 		alertBox.setAttribute('class', 'message-box');
 		alertBox.textContent = "Time's Up!";
 		message.appendChild(alertBox);
+
+		quizDisplay.classList.add('hide');
+		restartBtn.classList.remove('hide');
+
+		nextBtn.classList.add('hide');
+		scoreResult.textContent = score;
 	}
-	stopWatch.classList.add('hide');
 };
+
+restartBtn.addEventListener('click', restart);
+function restart() {
+	setTime();
+	startQuiz();
+	timer.classList.remove('hide');
+	message.classList.add('hide');
+}
 
 nextBtn.addEventListener('click', () => {
 	questionIndex++;
@@ -119,6 +163,8 @@ nextBtn.addEventListener('click', () => {
 });
 
 function startQuiz() {
+	secondsLeft = 5;
+	timer.textContent = secondsLeft;
 	score = 0;
 	showScore.textContent = score;
 	quizDisplay.classList.remove('hide');
@@ -178,54 +224,23 @@ function selectAnswer(e) {
 	if (shuffledQuestions.length > questionIndex + 1) {
 		nextBtn.classList.remove('hide');
 	} else {
-		// startBtn.innerText = 'Restart';
 		startBtn.classList.add('hide');
-		// restartBtn.classList.remove('hide');
 		finishBtn.classList.remove('hide');
 		restartBtn.classList.add('hide');
 	}
 }
 
 function finishQuiz() {
-	// const seeScore = document.createElement('div');
-	// seeScore.getAttribute('class', 'score');
 	scoreResult.classList.remove('hide');
 	scoreResult.textContent = `Your score is ${score}`;
 	quizDisplay.classList.add('hide');
-	// showScore.appendChild(seeScore);
-
-	// container.classList.add('hide');
 	restartBtn.classList.remove('hide');
 	finishBtn.classList.add('hide');
-	// restartQuiz();
-
-	// showScore.textContent = score;
-	// questionsDisplay.classList.remove('hide');
-	// answersBtn.classList.add('hide');
 }
-restartBtn.addEventListener('click', () => {
-	startQuiz();
-});
+
 finishBtn.addEventListener('click', () => {
 	finishQuiz();
 });
-
-function restartQuiz() {
-	startQuiz();
-	score = 0;
-	showScore.textContent = score;
-	// scoreResult.classList.add('hide');
-	// container.classList.remove('hide');
-	// restartBtn.classList.add('hide');
-
-	// questionsDisplay.classList.remove('hide');
-	// answersBtn.classList.remove('hide');
-	// restartBtn.classList.add('hide');
-	// startBtn.classList.add('hide');
-	// finishBtn.classList.add('hide');
-
-	finishQuiz();
-}
 
 function setStatusClass(element, correct) {
 	clearStatusClass(element);
