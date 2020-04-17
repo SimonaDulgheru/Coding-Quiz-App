@@ -140,6 +140,13 @@ function setTime() {
 		secondsLeft--;
 
 		timer.textContent = secondsLeft;
+		if (secondsLeft <= 10) {
+			timer.style.background = '#990005';
+		} else if (secondsLeft < 20) {
+			timer.style.background = '#999005';
+		} else {
+			timer.style.background = '#005D00';
+		}
 
 		if (
 			secondsLeft === 0 ||
@@ -147,9 +154,6 @@ function setTime() {
 		) {
 			clearInterval(timerSeconds);
 			showMessage();
-		}
-		if (secondsLeft <= 10) {
-			timer.style.background = '#990005';
 		}
 	}, 1000);
 }
@@ -184,7 +188,7 @@ nextBtn.addEventListener('click', () => {
 });
 
 const startQuiz = () => {
-	secondsLeft = 60;
+	secondsLeft = 40;
 	timer.textContent = secondsLeft;
 	score = 0;
 	showScore.textContent = score;
@@ -235,6 +239,13 @@ const selectAnswer = (e) => {
 	if (correct) {
 		showScore.textContent = score += 10;
 		console.log('Hello');
+	}
+	if (score > 20) {
+		showScore.style.color = '#999005';
+	}
+	if (score > 60) {
+		showScore.style.color = '#005D00';
+		showScore.style.background = '#fff';
 	}
 
 	setStatusClass(answersBtn, correct);
