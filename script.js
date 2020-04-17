@@ -130,7 +130,6 @@ function setTime() {
 			shuffledQuestions.length == questionIndex + 1
 		) {
 			clearInterval(timerSeconds);
-
 			showMessage();
 		}
 	}, 1000);
@@ -138,16 +137,18 @@ function setTime() {
 
 const showMessage = () => {
 	if (secondsLeft === 0) {
+		scoreResult.classList.remove('hide');
+		scoreResult.textContent = `Your score is ${score}`;
 		const alertBox = document.createElement('p');
 		alertBox.setAttribute('class', 'message-box');
 		alertBox.textContent = "Time's Up!";
 		message.appendChild(alertBox);
+		// finishQuiz();
 
 		quizDisplay.classList.add('hide');
 		restartBtn.classList.remove('hide');
 
 		nextBtn.classList.add('hide');
-		scoreResult.textContent = score;
 	}
 };
 
