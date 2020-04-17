@@ -7,8 +7,8 @@
 		<link rel="stylesheet" href="style.css" />
 	</head>
 	<body>
-		<div class="container">
-			<h1 class="title-quiz">Coding Quiz</h1>
+		<div class="container container-mob">
+			<h1 class="title-quiz">JS Coding Quiz</h1>
 			<div class="message hide"></div>
 			<div class="quiz-display hide">
 				<div class="score-timer">
@@ -20,14 +20,13 @@
 					<section id="score-display">
 						<h2 class="score">Score</h2>
 						<p id="score"></p>
-						<p id="fulltime"></p>
 					</section>
 				</div>
 
 				<div id="quiz-container" class="hide">
 					<div id="question" class="question-number">
 						<h3>
-							Question<span class="question-num-value">1</span>of
+							Question<span class="question-num-value"> 1</span>of
 							<span class="total-questions"></span>
 						</h3>
 						<br />
@@ -40,6 +39,7 @@
 				<br />
 				<br />
 			</div>
+			<div id="result" class="container-result hide"></div>
 
 			<div class="controls">
 				<button id="start-btn" class="start-btn btn hide">
@@ -55,8 +55,6 @@
 					Finish</button
 				><br />
 			</div>
-
-			<div id="result" class="container-result hide"></div>
 		</div>
 
 		<script src="script.js"></script>

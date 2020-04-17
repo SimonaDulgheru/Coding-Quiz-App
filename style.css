@@ -1,3 +1,9 @@
+@media only screen and (max-width: 600px) {
+	.container-mob {
+		padding: 10px 40px;
+	}
+}
+
 *,
 *::before,
 *::after {
@@ -5,25 +11,10 @@
 	font-family: Arial, Helvetica, sans-serif;
 }
 
-/* :root {
-	--hue-neutral: 200;
-	--hue-wrong: 0;
-	--hue-correct: black;
-	
-} */
-
 body {
 	padding: 0;
 	margin: 0;
-	display: flex;
-	width: 100vw;
-	justify-content: central;
-	align-items: central;
 	background: rgb(126, 126, 126);
-}
-
-body.wrong {
-	--hue: var(--hue-wrong);
 }
 
 .title-quiz {
@@ -34,10 +25,12 @@ body.wrong {
 	width: 90%;
 	max-width: 90%;
 	margin: 0 auto;
+	margin-top: 50px;
+	margin-bottom: 50px;
 	text-align: center;
 	background: rgb(51, 51, 51);
 	border-radius: 5px;
-	padding: 10px;
+	padding: 10px 40px;
 	box-shadow: 0 0 10px 2px;
 }
 
@@ -47,12 +40,17 @@ body.wrong {
 	box-shadow: inset 0px 1px 40px 2px rgba(5, 5, 5, 1);
 	background-color: rgb(85, 85, 85);
 	color: #fff;
-	padding: 15px;
+	padding: 10px;
 	font-weight: 600;
-	font-size: x-large;
+	font-size: large;
 	margin-bottom: 30px;
 	border-radius: 5px;
 	border: 1px solid black;
+}
+
+.question-num-value {
+	margin-right: 2px;
+	margin-left: 3px;
 }
 
 .options {
@@ -64,7 +62,6 @@ body.wrong {
 
 .btn {
 	border: 1px solid black;
-
 	background: black;
 	color: blanchedalmond;
 	border-radius: 5px;
@@ -85,7 +82,6 @@ body.wrong {
 	-webkit-box-shadow: inset 0px 1px 40px 2px rgba(46, 214, 4, 0.5);
 	-moz-box-shadow: inset 0px 1px 40px 2px rgba(46, 214, 4, 0.5);
 	box-shadow: inset 0px 1px 40px 2px rgba(46, 214, 4, 0.5);
-
 	color: rgb(252, 253, 251);
 }
 
@@ -93,7 +89,6 @@ body.wrong {
 	-webkit-box-shadow: inset 0px 1px 40px 2px rgba(255, 0, 0, 1);
 	-moz-box-shadow: inset 0px 1px 40px 2px rgba(255, 0, 0, 1);
 	box-shadow: inset 0px 1px 40px 2px rgba(255, 0, 0, 1);
-	/* --hue: var(--hue-wrong); */
 }
 
 .start-btn,
@@ -104,6 +99,11 @@ body.wrong {
 	font-size: 1.5rem;
 	font-weight: bold;
 	padding: 10px 20px;
+	margin-bottom: 10px;
+}
+
+#restart-btn {
+	margin-bottom: 15px;
 }
 
 .controls {
@@ -116,18 +116,21 @@ body.wrong {
 	display: none;
 }
 
-#timer {
-	border-radius: 70%;
-	width: 70px;
-	height: 70px;
+#timer,
+#score {
+	border-radius: 75%;
+	width: 75px;
+	height: 75px;
 	border: 2px solid grey;
 	align-items: center;
 	font-weight: 800;
 	font-size: 35px;
 	color: #fff;
 	margin: 0;
-	padding: 0;
+	padding-top: 7px;
 	color: #fff;
+	justify-content: center;
+	align-items: center;
 }
 
 .timer {
@@ -145,20 +148,6 @@ body.wrong {
 	padding: 0;
 	color: #fff;
 }
-
-#score {
-	border-radius: 70%;
-	width: 70px;
-	height: 70px;
-	border: 2px solid grey;
-	align-items: center;
-	font-weight: 800;
-	font-size: 35px;
-	color: #fff;
-	margin: 0;
-	padding: 0;
-	color: #fff;
-}
 #score-display {
 	display: flex;
 	justify-content: flex-end;
@@ -168,6 +157,7 @@ body.wrong {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
+	margin-bottom: 0;
 }
 
 #stopWatch,
@@ -177,15 +167,23 @@ body.wrong {
 }
 
 .message-box {
-	background-color: red;
-	padding: 5px;
-	margin-bottom: 5px;
+	width: 40%;
+	background-color: #a10000;
+	padding: 15px;
+	margin: 0 auto;
 	color: #fff;
+	margin-bottom: 15px;
+	border-radius: 5px;
 }
 
 #result {
+	width: 40%;
 	background: #fff;
 	color: green;
 	margin: 0 auto;
-	padding: 10px;
+	padding: 15px;
+	font-size: 20px;
+	font-weight: 700;
+	margin-bottom: 15px;
+	border-radius: 5px;
 }

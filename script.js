@@ -1,67 +1,95 @@
 const questions = [
 	{
-		question: 'What does CSS stand for?',
+		question: 'Inside which HTML element do we put the JavaScript?',
 		answers: [
-			{ text: 'Creative Style Sheet', correct: false },
-			{ text: ' Computer Style Sheet', correct: false },
-			{ text: 'Cascading Style Sheet', correct: true },
-			{ text: 'Colorful Style Sheet', correct: false },
+			{ text: '<script>', correct: true },
+			{ text: ' <scripting>', correct: false },
+			{ text: 'javascript', correct: false },
+			{ text: '<js>', correct: false },
 		],
 	},
 	{
-		question:
-			'Where in an HTML document is the correct place to refer to an external style sheet?',
+		question: 'Where is the correct place to insert a JavaScript?',
 		answers: [
-			{ text: 'In the <head> section', correct: true },
-			{ text: 'At the end of the document', correct: false },
-			{ text: 'In the <body> section', correct: false },
+			{ text: 'The <head> section', correct: false },
+			{ text: 'The <body> section', correct: false },
 			{ text: 'In the <footer> section', correct: false },
+			{
+				text: 'Both <head> and <body> section',
+				correct: true,
+			},
 		],
 	},
 	{
-		question: 'Which HTML tag is used to define an internal style sheet?',
+		question: 'How do you write "Hello World" in an alert box?',
 		answers: [
-			{ text: '<css>', correct: false },
-			{ text: '<style>', correct: true },
-			{ text: '<script>', correct: false },
-			{ text: '<link>', correct: false },
+			{ text: 'msg("Hello World")', correct: false },
+			{ text: 'msgBox("Hello World")', correct: false },
+			{ text: 'alertBox("Hello World")', correct: false },
+			{ text: 'alert("Hello World")', correct: true },
 		],
 	},
 	{
-		question: 'How do you insert a comment in a CSS file?',
+		question: 'How do you create a function in JavaScript?',
 		answers: [
-			{ text: '//this is a comment', correct: false },
-			{ text: '//this is a comment//', correct: false },
-			{ text: '/*this is a comment*/', correct: true },
-			{ text: '<this is a comment>', correct: false },
+			{ text: 'function = myFunction()', correct: false },
+			{ text: 'function myFunction()', correct: true },
+			{ text: 'function:myFunction()', correct: false },
+			{ text: 'function => myFunction()', correct: false },
 		],
 	},
 	{
-		question: 'Which property is used to change the background color?',
+		question: 'How do you call a function named "myFunction"?',
 		answers: [
-			{ text: 'color', correct: false },
-			{ text: 'background-color', correct: true },
-			{ text: 'bgcolor', correct: false },
-			{ text: 'background', correct: true },
+			{ text: 'call myFunction()', correct: false },
+			{ text: 'myFunction()', correct: true },
+			{ text: 'call function myFunction()', correct: false },
+			{ text: 'call function ()', correct: false },
 		],
 	},
 	{
-		question:
-			'Which CSS property is used to change the text color of an element?',
+		question: 'How to write an IF statement in JavaScript?',
 		answers: [
-			{ text: 'textcolor', correct: false },
-			{ text: 'text-color', correct: false },
-			{ text: 'bgcolor', correct: false },
-			{ text: 'color', correct: true },
+			{ text: 'if i === 5 then', correct: false },
+			{ text: 'if i = 5 then', correct: false },
+			{ text: 'if (i === 5)', correct: true },
+			{ text: 'if i = 5', correct: false },
 		],
 	},
 	{
-		question: 'Which CSS property controls the text size?',
+		question: 'What is the correct way to write a JavaScript array?',
 		answers: [
-			{ text: 'text-style', correct: false },
-			{ text: 'font-size', correct: true },
-			{ text: 'font-style', correct: false },
-			{ text: 'text-size', correct: false },
+			{ text: 'let colors = (1:"red", 2:"blue")', correct: false },
+			{ text: 'let colors = ("red", "blue")', correct: false },
+			{ text: 'let colors = ["red", "blue"]', correct: true },
+			{ text: 'let colors = (["red", "blue"])', correct: false },
+		],
+	},
+	{
+		question: 'How do you round the number 7.25, to the nearest integer?',
+		answers: [
+			{ text: 'Math.round(7.25)', correct: true },
+			{ text: 'round(7.25)', correct: false },
+			{ text: 'Math.rnd(7.25)', correct: false },
+			{ text: 'rnd(7.25)', correct: false },
+		],
+	},
+	{
+		question: 'How do you declare a JavaScript variable?',
+		answers: [
+			{ text: 'variable carName', correct: false },
+			{ text: 'var carName', correct: true },
+			{ text: 'v carName', correct: false },
+			{ text: 'let carName', correct: true },
+		],
+	},
+	{
+		question: 'Which event occurs when the user clicks on an HTML element?',
+		answers: [
+			{ text: 'onmouseclick', correct: false },
+			{ text: 'onchange', correct: false },
+			{ text: 'onclick  ', correct: true },
+			{ text: 'onmouseover', correct: false },
 		],
 	},
 ];
@@ -79,57 +107,38 @@ let questionsDisplay = document.querySelector('.question'); //question
 const options = document.querySelector('.options');
 const answersBtn = document.getElementById('answers-btn '); //answer
 const message = document.querySelector('.message');
-
 const showScore = document.getElementById('score');
 const scoreResult = document.getElementById('result');
 const container = document.querySelector('.container');
 const quizDisplay = document.querySelector('.quiz-display ');
 
 let score;
-
 let index = 0;
 totalQ.textContent = questions.length;
-
 let secondsLeft;
-
-quizContainer.classList.remove('hide');
-
-// questionNumValue.textContent = index + 1;
-
-// console.log(questionIndex);
-
 let shuffledQuestions, questionIndex; //currentquestionIndex
 
 window.onload = () => {
-	currentDate();
+	quizContainer.classList.remove('hide');
+
 	timer.classList.remove('hide');
 	startBtn.classList.remove('hide');
 	message.classList.remove('hide');
-	secondsLeft = 5;
+
 	timer.textContent = secondsLeft;
 	score = 0;
 	showScore.textContent = score;
 	console.log(score);
 };
 
-const currentDate = () => {
-	timer.textContent = secondsLeft;
-
-	let showDate = document.createElement('p');
-	stopWatch.appendChild(showDate);
-	let today = new Date();
-	showDate.textContent = `${today}`;
-
-	console.log(today);
-};
-
 startBtn.addEventListener('click', setTime);
 function setTime() {
 	score = 0;
 	startQuiz();
-	// randomQuestion();
+
 	let timerSeconds = setInterval(function () {
 		secondsLeft--;
+
 		timer.textContent = secondsLeft;
 
 		if (
@@ -139,6 +148,9 @@ function setTime() {
 			clearInterval(timerSeconds);
 			showMessage();
 		}
+		if (secondsLeft <= 10) {
+			timer.style.background = '#990005';
+		}
 	}, 1000);
 }
 
@@ -146,15 +158,14 @@ const showMessage = () => {
 	if (secondsLeft === 0) {
 		scoreResult.classList.remove('hide');
 		scoreResult.textContent = `Your score is ${score}`;
+
 		const alertBox = document.createElement('p');
 		alertBox.setAttribute('class', 'message-box');
 		alertBox.textContent = "Time's Up!";
 		message.appendChild(alertBox);
-		// finishQuiz();
 
 		quizDisplay.classList.add('hide');
 		restartBtn.classList.remove('hide');
-
 		nextBtn.classList.add('hide');
 	}
 };
@@ -172,8 +183,8 @@ nextBtn.addEventListener('click', () => {
 	setNextQuestion();
 });
 
-function startQuiz() {
-	secondsLeft = 20;
+const startQuiz = () => {
+	secondsLeft = 60;
 	timer.textContent = secondsLeft;
 	score = 0;
 	showScore.textContent = score;
@@ -183,17 +194,16 @@ function startQuiz() {
 	restartBtn.classList.add('hide');
 	shuffledQuestions = questions.sort(() => Math.random() - 0.5);
 	questionIndex = 0;
-
 	quizContainer.classList.remove('hide');
 	setNextQuestion();
-}
+};
 
-function setNextQuestion() {
+const setNextQuestion = () => {
 	resetState();
 	loadQuestion(shuffledQuestions[questionIndex]);
-}
+};
 
-function loadQuestion(question) {
+const loadQuestion = (question) => {
 	console.log(question);
 	questionsDisplay.innerHTML = question.question;
 	questionNumValue.textContent = questionIndex + 1;
@@ -207,17 +217,17 @@ function loadQuestion(question) {
 		button.addEventListener('click', selectAnswer);
 		answersBtn.appendChild(button);
 	});
-}
+};
 
-function resetState() {
+const resetState = () => {
 	clearStatusClass(answersBtn);
 	nextBtn.classList.add('hide');
 	while (answersBtn.firstChild) {
 		answersBtn.removeChild(answersBtn.firstChild);
 	}
-}
+};
 
-function selectAnswer(e) {
+const selectAnswer = (e) => {
 	const selectedBtn = e.target;
 	console.log(selectedBtn);
 	const correct = selectedBtn.dataset.correct;
@@ -239,21 +249,21 @@ function selectAnswer(e) {
 		finishBtn.classList.remove('hide');
 		restartBtn.classList.add('hide');
 	}
-}
+};
 
-function finishQuiz() {
+const finishQuiz = () => {
 	scoreResult.classList.remove('hide');
 	scoreResult.textContent = `Your score is ${score}`;
 	quizDisplay.classList.add('hide');
 	restartBtn.classList.remove('hide');
 	finishBtn.classList.add('hide');
-}
+};
 
 finishBtn.addEventListener('click', () => {
 	finishQuiz();
 });
 
-function setStatusClass(element, correct) {
+const setStatusClass = (element, correct) => {
 	clearStatusClass(element);
 	if (correct) {
 		element.classList.add('correct');
@@ -262,9 +272,9 @@ function setStatusClass(element, correct) {
 		element.classList.add('wrong');
 		console.log('wrong');
 	}
-}
+};
 
-function clearStatusClass(element) {
+const clearStatusClass = (element) => {
 	element.classList.remove('correct');
 	element.classList.remove('wrong');
-}
+};
