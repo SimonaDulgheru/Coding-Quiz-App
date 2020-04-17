@@ -79,13 +79,13 @@ let questionsDisplay = document.querySelector('.question'); //question
 const options = document.querySelector('.options');
 const answersBtn = document.getElementById('answers-btn '); //answer
 const message = document.querySelector('.message');
-// const resultCont = document.querySelector('.container-result');
+
 const showScore = document.getElementById('score');
 const scoreResult = document.getElementById('result');
 const container = document.querySelector('.container');
 const quizDisplay = document.querySelector('.quiz-display ');
 
-let score = 0;
+let score;
 
 let index = 0;
 totalQ.textContent = questions.length;
@@ -93,67 +93,51 @@ let secondsLeft;
 
 let shuffledQuestions, questionIndex; //currentquestionIndex
 
-// const questionLabel = document.querySelector(".option");
-
 window.onload = () => {
+	currentDate();
 	timer.classList.remove('hide');
 	startBtn.classList.remove('hide');
 	message.classList.remove('hide');
-	secondsLeft = 30;
+	secondsLeft = 5;
 	timer.textContent = secondsLeft;
-	// score = 0;
+	score = 0;
 	showScore.textContent = score;
 	console.log(score);
 };
 
-// const currentDate = () => {
-// 	timer.textContent = secondsLeft;
+const currentDate = () => {
+	timer.textContent = secondsLeft;
 
-// 	let showDate = document.createElement('p');
-// 	stopWatch.appendChild(showDate);
-// 	let today = new Date();
-// 	showDate.textContent = `${today}`;
+	let showDate = document.createElement('p');
+	stopWatch.appendChild(showDate);
+	let today = new Date();
+	showDate.textContent = `${today}`;
 
-// 	console.log(today);
-// };
+	console.log(today);
+};
 
 startBtn.addEventListener('click', setTime);
 function setTime() {
-	// score = 0;
+	score = 0;
 	startQuiz();
 	// randomQuestion();
 	let timerSeconds = setInterval(function () {
 		secondsLeft--;
-		timer.textContent = `${secondsLeft}`;
+		timer.textContent = secondsLeft;
 
-		if (secondsLeft === 0) {
+		if (
+			secondsLeft === 0 ||
+			shuffledQuestions.length == questionIndex + 1
+		) {
 			clearInterval(timerSeconds);
-
-			// restartBtn.classList.remove('hide');
-
-			// restartBtn.addEventListener('click', () => {
-			// 	setTime();
-			// 	startQuiz();
-			// });
 
 			showMessage();
 		}
 	}, 1000);
 }
 
-// restartBtn.addEventListener('click', startQuiz);
 const showMessage = () => {
 	if (secondsLeft === 0) {
-		restartBtn.addEventListener('click', () => {
-			restart();
-			startQuiz();
-		});
-
-		// setTime();
-		// restartBtn.addEventListener('click', () => {
-		// 	restart();
-		// 	startQuiz();
-		// });
 		const alertBox = document.createElement('p');
 		alertBox.setAttribute('class', 'message-box');
 		alertBox.textContent = "Time's Up!";
@@ -163,23 +147,14 @@ const showMessage = () => {
 		restartBtn.classList.remove('hide');
 
 		nextBtn.classList.add('hide');
-		scoreResult.classList.remove('hide');
-		scoreResult.textContent = `Your score is${score}`;
-		// restartBtn.addEventListener('click', () => {
-		// 	// restart();
-		// 	startQuiz();
-		// });
+		scoreResult.textContent = score;
 	}
 };
-// restartBtn.addEventListener('click', () => {
-// 	setTime();
-// 	startQuiz();
-// });
 
+restartBtn.addEventListener('click', restart);
 function restart() {
-	// setTime();
-	// startQuiz();
-	showMessage();
+	setTime();
+	startQuiz();
 	timer.classList.remove('hide');
 	message.classList.add('hide');
 }
@@ -190,7 +165,7 @@ nextBtn.addEventListener('click', () => {
 });
 
 function startQuiz() {
-	secondsLeft = 5;
+	secondsLeft = 20;
 	timer.textContent = secondsLeft;
 	score = 0;
 	showScore.textContent = score;
@@ -263,12 +238,6 @@ function finishQuiz() {
 	quizDisplay.classList.add('hide');
 	restartBtn.classList.remove('hide');
 	finishBtn.classList.add('hide');
-	restartBtn.addEventListener('click', () => {
-		restart();
-		startQuiz();
-	});
-	// restart();
-	// restartBtn.addEventListener('click', restart);
 }
 
 finishBtn.addEventListener('click', () => {

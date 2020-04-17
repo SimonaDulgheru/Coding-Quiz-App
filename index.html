@@ -8,19 +8,21 @@
 	</head>
 	<body>
 		<div class="container">
-			<h1>Coding Quiz</h1>
+			<h1 class="title-quiz">Coding Quiz</h1>
 			<div class="message hide"></div>
 			<div class="quiz-display hide">
-				<section id="stopWatch">
-					Timer
-					<p id="timer" class="hide"></p>
-				</section>
+				<div class="score-timer">
+					<section id="stopWatch">
+						<h2 class="timer">Timer</h2>
+						<p id="timer" class="hide"></p>
+					</section>
 
-				<section id="score-display">
-					Score
-					<p id="score"></p>
-					<p id="fulltime"></p>
-				</section>
+					<section id="score-display">
+						<h2 class="score">Score</h2>
+						<p id="score"></p>
+						<p id="fulltime"></p>
+					</section>
+				</div>
 
 				<div id="quiz-container" class="hide">
 					<div id="question" class="question-number">
@@ -33,12 +35,7 @@
 					</div>
 					<div class="question"></div>
 
-					<div id="answers-btn " class="options">
-						<!-- <button class="btn"></button>
-					<button class="btn"></button>
-					<button class="btn"></button>
-					<button class="btn"></button> -->
-					</div>
+					<div id="answers-btn " class="options"></div>
 				</div>
 				<br />
 				<br />
@@ -64,5 +61,6 @@
 
 		<script src="script.js"></script>
 		<script src="data.js"></script>
+		<script src="home.js"></script>
 	</body>
 </html>
