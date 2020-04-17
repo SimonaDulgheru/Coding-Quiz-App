@@ -89,7 +89,14 @@ let score;
 
 let index = 0;
 totalQ.textContent = questions.length;
+
 let secondsLeft;
+
+quizContainer.classList.remove('hide');
+
+// questionNumValue.textContent = index + 1;
+
+// console.log(questionIndex);
 
 let shuffledQuestions, questionIndex; //currentquestionIndex
 
@@ -189,6 +196,7 @@ function setNextQuestion() {
 function loadQuestion(question) {
 	console.log(question);
 	questionsDisplay.innerHTML = question.question;
+	questionNumValue.textContent = questionIndex + 1;
 	question.answers.forEach((answer) => {
 		const button = document.createElement('button');
 		button.textContent = answer.text;
