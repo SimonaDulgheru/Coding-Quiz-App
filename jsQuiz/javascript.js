@@ -116,15 +116,17 @@ const info = document.querySelector('.info')
 const homeBtn = document.querySelector('.home-btn')
 const backBtn = document.querySelector('.back-btn')
 
+
 let score;
 let index = 0;
 totalQ.textContent = questions.length;
 let secondsLeft;
 let shuffledQuestions, questionIndex; //currentquestionIndex
 
+
+
 window.onload = () =>
 {
-
     quizButtons.forEach(element =>
     {
         element.classList.remove('hide')
@@ -140,6 +142,8 @@ window.onload = () =>
     showScore.textContent = score;
     console.log(score);
 };
+
+
 backBtn.addEventListener('click', () =>
 {
     {
@@ -148,37 +152,36 @@ backBtn.addEventListener('click', () =>
         };
 
     }
-})
+});
 
+restartBtn.addEventListener('click', restart);
 startBtn.addEventListener('click', setTime);
 startBtn.addEventListener('click', () =>
 {
-
     backBtn.classList.add('hide')
     quizButtons.forEach(element =>
     {
         element.classList.add('hide')
     })
+});
 
-})
+
 function setTime()
 {
     score = 0;
     startQuiz();
-
     let timerSeconds = setInterval(function ()
     {
         secondsLeft--;
-
         timer.textContent = secondsLeft;
         if (secondsLeft <= 10) {
             timer.style.background = '#990005';
         } else if (secondsLeft < 20) {
             timer.style.background = '#999005';
+
         } else {
             timer.style.background = '#005D00';
         }
-
         if (
             secondsLeft === 0 ||
             shuffledQuestions.length == questionIndex + 1
@@ -187,26 +190,24 @@ function setTime()
             showMessage();
         }
     }, 1000);
-}
+};
 
 const showMessage = () =>
 {
     if (secondsLeft === 0) {
         scoreResult.classList.remove('hide');
         scoreResult.textContent = `Your score is ${score}`;
-
         const alertBox = document.createElement('p');
         alertBox.setAttribute('class', 'message-box');
         alertBox.textContent = "Time's Up!";
         message.appendChild(alertBox);
-
         quizDisplay.classList.add('hide');
         restartBtn.classList.remove('hide');
         nextBtn.classList.add('hide');
     }
 };
 
-restartBtn.addEventListener('click', restart);
+
 
 function restart()
 {
@@ -215,7 +216,7 @@ function restart()
     timer.classList.remove('hide');
     message.classList.add('hide');
     homeBtn.classList.add('hide')
-}
+};
 
 nextBtn.addEventListener('click', () =>
 {
@@ -239,11 +240,13 @@ const startQuiz = () =>
     setNextQuestion();
 };
 
+
 const setNextQuestion = () =>
 {
     resetState();
     loadQuestion(shuffledQuestions[questionIndex]);
 };
+
 
 const loadQuestion = (question) =>
 {
@@ -263,6 +266,7 @@ const loadQuestion = (question) =>
     });
 };
 
+
 const resetState = () =>
 {
     clearStatusClass(answersBtn);
@@ -277,7 +281,6 @@ const selectAnswer = (e) =>
     const selectedBtn = e.target;
     console.log(selectedBtn);
     const correct = selectedBtn.dataset.correct;
-
     if (correct) {
         showScore.textContent = score += 10;
         console.log('Hello');
@@ -321,10 +324,12 @@ const finishQuiz = () =>
     finishBtn.classList.add('hide');
 };
 
+
 finishBtn.addEventListener('click', () =>
 {
     finishQuiz();
 });
+
 
 const setStatusClass = (element, correct) =>
 {
@@ -337,6 +342,7 @@ const setStatusClass = (element, correct) =>
         console.log('wrong');
     }
 };
+
 
 const clearStatusClass = (element) =>
 {

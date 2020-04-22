@@ -141,6 +141,7 @@ window.onload = () =>
     showScore.textContent = score;
     console.log(score);
 };
+
 backBtn.addEventListener('click', () =>
 {
     {
@@ -161,7 +162,8 @@ startBtn.addEventListener('click', () =>
         element.classList.add('hide')
     })
 
-})
+});
+
 function setTime()
 {
     score = 0;
@@ -179,7 +181,6 @@ function setTime()
         } else {
             timer.style.background = '#005D00';
         }
-
         if (
             secondsLeft === 0 ||
             shuffledQuestions.length == questionIndex + 1
@@ -195,12 +196,10 @@ const showMessage = () =>
     if (secondsLeft === 0) {
         scoreResult.classList.remove('hide');
         scoreResult.textContent = `Your score is ${score}`;
-
         const alertBox = document.createElement('p');
         alertBox.setAttribute('class', 'message-box');
         alertBox.textContent = "Time's Up!";
         message.appendChild(alertBox);
-
         quizDisplay.classList.add('hide');
         restartBtn.classList.remove('hide');
         nextBtn.classList.add('hide');
@@ -216,7 +215,7 @@ function restart()
     timer.classList.remove('hide');
     message.classList.add('hide');
     homeBtn.classList.add('hide')
-}
+};
 
 nextBtn.addEventListener('click', () =>
 {
@@ -278,7 +277,6 @@ const selectAnswer = (e) =>
     const selectedBtn = e.target;
     console.log(selectedBtn);
     const correct = selectedBtn.dataset.correct;
-
     if (correct) {
         showScore.textContent = score += 10;
         console.log('Hello');
