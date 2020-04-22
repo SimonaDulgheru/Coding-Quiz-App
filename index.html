@@ -10,7 +10,18 @@
 
 <body>
 	<div class="container container-mob">
-		<h1 class="title-quiz title-quiz-mob">JS Coding Quiz</h1>
+		<h1 class="title-quiz title-quiz-mob">Coding Quiz</h1>
+		<p class="info hide">This quiz consists of 10 single and multiple-choice questions. Read each question
+			carefully, and
+			click on the
+			button next for next question.The total score for the quiz is based on your responses to all questions.
+			You'll have 40 seconds for each test.</p>
+		<div class="choose-quiz">
+
+			<button class="js button hide">JS</button>
+			<button class="react button hide">React</button>
+			<button class="java button hide">Java</button>
+		</div>
 		<div class="message hide"></div>
 		<div class="quiz-display hide">
 			<div class="score-timer">
@@ -51,11 +62,15 @@
 				Restart</button>
 			<button id="finish-btn" class="finish-btn btn hide">
 				Finish</button>
+			<button id="back-btn" class="back-btn btn hide">
+				Back</button>
+
 		</div>
 	</div>
 
+	<!-- <script src="cssQuiz/cssQuiz.js"></script> -->
 	<script src="script.js"></script>
-	<script src="data.js"></script>
+
 	<!-- <script src="home.js"></script> -->
 </body>
 
