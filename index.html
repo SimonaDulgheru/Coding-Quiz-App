@@ -1,64 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Quiz</title>
-		<link rel="stylesheet" href="style.css" />
-	</head>
-	<body>
-		<div class="container container-mob">
-			<h1 class="title-quiz">JS Coding Quiz</h1>
-			<div class="message hide"></div>
-			<div class="quiz-display hide">
-				<div class="score-timer">
-					<section id="stopWatch">
-						<h2 class="timer">Timer</h2>
-						<p id="timer" class="hide"></p>
-					</section>
 
-					<section id="score-display">
-						<h2 class="score">Score</h2>
-						<p id="score"></p>
-					</section>
-				</div>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Quiz</title>
+	<link rel="stylesheet" href="style.css" />
+</head>
 
-				<div id="quiz-container" class="hide">
-					<div id="question" class="question-number">
-						<h3>
-							Question<span class="question-num-value"> 1</span>of
-							<span class="total-questions"></span>
-						</h3>
-						<br />
-						<br />
-					</div>
-					<div class="question"></div>
+<body>
+	<div class="container container-mob">
+		<h1 class="title-quiz title-quiz-mob">JS Coding Quiz</h1>
+		<div class="message hide"></div>
+		<div class="quiz-display hide">
+			<div class="score-timer">
+				<section id="stopWatch">
+					<h2 class="timer">Timer</h2>
+					<p id="timer" class="hide"></p>
+				</section>
 
-					<div id="answers-btn " class="options"></div>
-				</div>
-				<br />
-				<br />
+				<section id="score-display">
+					<h2 class="score">Score</h2>
+					<p id="score"></p>
+				</section>
 			</div>
-			<div id="result" class="container-result hide"></div>
 
-			<div class="controls">
-				<button id="start-btn" class="start-btn btn hide">
-					Start
-				</button>
+			<div id="quiz-container" class="hide">
+				<div id="question" class="question-number">
+					<h3>
+						Question<span class="question-num-value"> 1</span>of
+						<span class="total-questions"></span>
+					</h3>
 
-				<button id="next-btn" class="next-btn btn hide">Next</button
-				><br />
-				<button id="restart-btn" class="restart-btn btn hide">
-					Restart</button
-				><br />
-				<button id="finish-btn" class="finish-btn btn hide">
-					Finish</button
-				><br />
+				</div>
+				<div class="question"></div>
+
+				<div id="answers-btn " class="options"></div>
 			</div>
+
 		</div>
+		<div id="result" class="container-result hide"></div>
 
-		<script src="script.js"></script>
-		<script src="data.js"></script>
-		<!-- <script src="home.js"></script> -->
-	</body>
+		<div class="controls">
+			<button id="start-btn" class="start-btn btn hide">
+				Start
+			</button>
+
+			<button id="next-btn" class="next-btn btn hide">Next</button>
+			<button id="restart-btn" class="restart-btn btn hide">
+				Restart</button>
+			<button id="finish-btn" class="finish-btn btn hide">
+				Finish</button>
+		</div>
+	</div>
+
+	<script src="script.js"></script>
+	<script src="data.js"></script>
+	<!-- <script src="home.js"></script> -->
+</body>
+
 </html>

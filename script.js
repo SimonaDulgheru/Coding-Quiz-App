@@ -118,7 +118,8 @@ totalQ.textContent = questions.length;
 let secondsLeft;
 let shuffledQuestions, questionIndex; //currentquestionIndex
 
-window.onload = () => {
+window.onload = () =>
+{
 	quizContainer.classList.remove('hide');
 
 	timer.classList.remove('hide');
@@ -132,11 +133,13 @@ window.onload = () => {
 };
 
 startBtn.addEventListener('click', setTime);
-function setTime() {
+function setTime()
+{
 	score = 0;
 	startQuiz();
 
-	let timerSeconds = setInterval(function () {
+	let timerSeconds = setInterval(function ()
+	{
 		secondsLeft--;
 
 		timer.textContent = secondsLeft;
@@ -158,7 +161,8 @@ function setTime() {
 	}, 1000);
 }
 
-const showMessage = () => {
+const showMessage = () =>
+{
 	if (secondsLeft === 0) {
 		scoreResult.classList.remove('hide');
 		scoreResult.textContent = `Your score is ${score}`;
@@ -175,19 +179,23 @@ const showMessage = () => {
 };
 
 restartBtn.addEventListener('click', restart);
-function restart() {
+
+function restart()
+{
 	setTime();
 	startQuiz();
 	timer.classList.remove('hide');
 	message.classList.add('hide');
 }
 
-nextBtn.addEventListener('click', () => {
+nextBtn.addEventListener('click', () =>
+{
 	questionIndex++;
 	setNextQuestion();
 });
 
-const startQuiz = () => {
+const startQuiz = () =>
+{
 	secondsLeft = 40;
 	timer.textContent = secondsLeft;
 	score = 0;
@@ -202,16 +210,19 @@ const startQuiz = () => {
 	setNextQuestion();
 };
 
-const setNextQuestion = () => {
+const setNextQuestion = () =>
+{
 	resetState();
 	loadQuestion(shuffledQuestions[questionIndex]);
 };
 
-const loadQuestion = (question) => {
+const loadQuestion = (question) =>
+{
 	console.log(question);
 	questionsDisplay.innerHTML = question.question;
 	questionNumValue.textContent = questionIndex + 1;
-	question.answers.forEach((answer) => {
+	question.answers.forEach((answer) =>
+	{
 		const button = document.createElement('button');
 		button.textContent = answer.text;
 		button.classList.add('btn');
@@ -223,7 +234,8 @@ const loadQuestion = (question) => {
 	});
 };
 
-const resetState = () => {
+const resetState = () =>
+{
 	clearStatusClass(answersBtn);
 	nextBtn.classList.add('hide');
 	while (answersBtn.firstChild) {
@@ -231,7 +243,8 @@ const resetState = () => {
 	}
 };
 
-const selectAnswer = (e) => {
+const selectAnswer = (e) =>
+{
 	const selectedBtn = e.target;
 	console.log(selectedBtn);
 	const correct = selectedBtn.dataset.correct;
@@ -249,7 +262,8 @@ const selectAnswer = (e) => {
 	}
 
 	setStatusClass(answersBtn, correct);
-	Array.from(answersBtn.children).forEach((button) => {
+	Array.from(answersBtn.children).forEach((button) =>
+	{
 		setStatusClass(button, button.dataset.correct);
 	});
 
@@ -262,7 +276,8 @@ const selectAnswer = (e) => {
 	}
 };
 
-const finishQuiz = () => {
+const finishQuiz = () =>
+{
 	scoreResult.classList.remove('hide');
 	scoreResult.textContent = `Your score is ${score}`;
 	quizDisplay.classList.add('hide');
@@ -270,11 +285,13 @@ const finishQuiz = () => {
 	finishBtn.classList.add('hide');
 };
 
-finishBtn.addEventListener('click', () => {
+finishBtn.addEventListener('click', () =>
+{
 	finishQuiz();
 });
 
-const setStatusClass = (element, correct) => {
+const setStatusClass = (element, correct) =>
+{
 	clearStatusClass(element);
 	if (correct) {
 		element.classList.add('correct');
@@ -285,7 +302,8 @@ const setStatusClass = (element, correct) => {
 	}
 };
 
-const clearStatusClass = (element) => {
+const clearStatusClass = (element) =>
+{
 	element.classList.remove('correct');
 	element.classList.remove('wrong');
 };
