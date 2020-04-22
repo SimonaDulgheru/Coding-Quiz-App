@@ -1,95 +1,95 @@
 const questions = [
     {
-        question: 'Inside which HTML element do we put the JavaScript?',
+        question: 'The PHP syntax is most similar to:?',
         answers: [
-            { text: '<script>', correct: true },
-            { text: ' <scripting>', correct: false },
-            { text: 'javascript', correct: false },
-            { text: '<js>', correct: false },
+            { text: 'Perl and C  ', correct: true },
+            { text: 'JavaScript', correct: false },
+            { text: 'VBScript', correct: false },
+            { text: 'Java', correct: false },
         ],
     },
     {
-        question: 'Where is the correct place to insert a JavaScript?',
+        question: 'What is the correct way to create a function in PHP?',
         answers: [
-            { text: 'The <head> section', correct: false },
-            { text: 'The <body> section', correct: false },
-            { text: 'In the <footer> section', correct: false },
+            { text: 'create myFunction()', correct: false },
+            { text: 'new_function myFunction()', correct: false },
+            { text: 'function myFunction()', correct: true },
             {
-                text: 'Both <head> and <body> section',
-                correct: true,
+                text: 'Function()',
+                correct: false,
             },
         ],
     },
     {
-        question: 'How do you write "Hello World" in an alert box?',
+        question: "What is the correct way to open the file 'time.txt' as readable?",
         answers: [
-            { text: 'msg("Hello World")', correct: false },
-            { text: 'msgBox("Hello World")', correct: false },
-            { text: 'alertBox("Hello World")', correct: false },
-            { text: 'alert("Hello World")', correct: true },
+            { text: 'fopen("time.txt","r+");', correct: false },
+            { text: 'open("time.txt");', correct: false },
+            { text: 'open("time.txt","read");', correct: false },
+            { text: 'fopen("time.txt","r");  ', correct: true },
         ],
     },
     {
-        question: 'How do you create a function in JavaScript?',
+        question: 'Which superglobal variable holds information about headers, paths, and script locations?',
         answers: [
-            { text: 'function = myFunction()', correct: false },
-            { text: 'function myFunction()', correct: true },
-            { text: 'function:myFunction()', correct: false },
-            { text: 'function => myFunction()', correct: false },
+            { text: '$_SESSION', correct: false },
+            { text: '$_GLOBALS', correct: false },
+            { text: '$_GET', correct: false },
+            { text: '$_SERVER ', correct: true },
         ],
     },
     {
-        question: 'How do you call a function named "myFunction"?',
+        question: 'What is the correct way to add 1 to the $count variable?',
         answers: [
-            { text: 'call myFunction()', correct: false },
-            { text: 'myFunction()', correct: true },
-            { text: 'call function myFunction()', correct: false },
-            { text: 'call function ()', correct: false },
+            { text: '++count', correct: false },
+            { text: 'count++;', correct: false },
+            { text: '$count =+1', correct: false },
+            { text: '$count++;', correct: true },
         ],
     },
     {
-        question: 'How to write an IF statement in JavaScript?',
+        question: 'Which one of these variables has an illegal name?',
         answers: [
-            { text: 'if i === 5 then', correct: false },
-            { text: 'if i = 5 then', correct: false },
-            { text: 'if (i === 5)', correct: true },
-            { text: 'if i = 5', correct: false },
+            { text: 'myVar', correct: false },
+            { text: '$my_Var', correct: false },
+            { text: '$my-Var  ', correct: true },
+            { text: '$myVar', correct: false },
         ],
     },
     {
-        question: 'What is the correct way to write a JavaScript array?',
+        question: 'How do you create a cookie in PHP?',
         answers: [
-            { text: 'let colors = (1:"red", 2:"blue")', correct: false },
-            { text: 'let colors = ("red", "blue")', correct: false },
-            { text: 'let colors = ["red", "blue"]', correct: true },
-            { text: 'let colors = (["red", "blue"])', correct: false },
+            { text: 'createcookie', correct: false },
+            { text: 'makecookie()', correct: false },
+            { text: 'setcookie()  ', correct: true },
+            { text: 'setcookie', correct: false },
         ],
     },
     {
-        question: 'How do you round the number 7.25, to the nearest integer?',
+        question: 'Which operator is used to check if two values are equal and of same data type?',
         answers: [
-            { text: 'Math.round(7.25)', correct: true },
-            { text: 'round(7.25)', correct: false },
-            { text: 'Math.rnd(7.25)', correct: false },
-            { text: 'rnd(7.25)', correct: false },
+            { text: '===  ', correct: true },
+            { text: ' =', correct: false },
+            { text: '==', correct: false },
+            { text: '!=', correct: false },
         ],
     },
     {
-        question: 'How do you declare a JavaScript variable?',
+        question: 'What is a correct way to add a comment in PHP?',
         answers: [
-            { text: 'variable carName', correct: false },
-            { text: 'var carName', correct: true },
-            { text: 'v carName', correct: false },
-            { text: 'let carName', correct: true },
+            { text: '<comment>...</comment>', correct: false },
+            { text: '/*...*/  ', correct: true },
+            { text: '<!--...-->', correct: false },
+            { text: '*\...\*', correct: false },
         ],
     },
     {
-        question: 'Which event occurs when the user clicks on an HTML element?',
+        question: 'What is the correct way to include the file "time.inc" ?',
         answers: [
-            { text: 'onmouseclick', correct: false },
-            { text: 'onchange', correct: false },
-            { text: 'onclick  ', correct: true },
-            { text: 'onmouseover', correct: false },
+            { text: '<?php include file="time.inc"; ?>', correct: false },
+            { text: '<?php include:"time.inc"; ?>', correct: false },
+            { text: '<?php include "time.inc"; ?>  ', correct: true },
+            { text: '<!-- include file="time.inc" -->', correct: false },
         ],
     },
 ];
@@ -113,6 +113,7 @@ const container = document.querySelector('.container');
 const quizDisplay = document.querySelector('.quiz-display ');
 const quizButtons = document.querySelectorAll('.button');
 const info = document.querySelector('.info')
+const phpBtn = document.querySelector('.php')
 const homeBtn = document.querySelector('.home-btn')
 const backBtn = document.querySelector('.back-btn')
 

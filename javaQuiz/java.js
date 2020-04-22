@@ -1,95 +1,95 @@
 const questions = [
     {
-        question: 'Inside which HTML element do we put the JavaScript?',
+        question: 'What is a correct syntax to output "Hello World" in Java?',
         answers: [
-            { text: '<script>', correct: true },
-            { text: ' <scripting>', correct: false },
-            { text: 'javascript', correct: false },
-            { text: '<js>', correct: false },
+            { text: 'System.out.println("Hello World");  ', correct: true },
+            { text: 'print ("Hello World");', correct: false },
+            { text: 'echo("Hello World");', correct: false },
+            { text: 'Console("Hello World");', correct: false },
         ],
     },
     {
-        question: 'Where is the correct place to insert a JavaScript?',
+        question: 'Which data type is used to create a variable that should store text?',
         answers: [
-            { text: 'The <head> section', correct: false },
-            { text: 'The <body> section', correct: false },
-            { text: 'In the <footer> section', correct: false },
+            { text: 'Txt', correct: false },
+            { text: 'string', correct: false },
+            { text: 'myString', correct: false },
             {
-                text: 'Both <head> and <body> section',
+                text: 'String ',
                 correct: true,
             },
         ],
     },
     {
-        question: 'How do you write "Hello World" in an alert box?',
+        question: 'How do you create a variable with the numeric value 5?',
         answers: [
-            { text: 'msg("Hello World")', correct: false },
-            { text: 'msgBox("Hello World")', correct: false },
-            { text: 'alertBox("Hello World")', correct: false },
-            { text: 'alert("Hello World")', correct: true },
+            { text: 'num x = 5', correct: false },
+            { text: 'float x = 5;', correct: false },
+            { text: 'x = 5;', correct: false },
+            { text: 'int x = 5;  ', correct: true },
         ],
     },
     {
-        question: 'How do you create a function in JavaScript?',
+        question: 'Which method can be used to find the length of a string?',
         answers: [
-            { text: 'function = myFunction()', correct: false },
-            { text: 'function myFunction()', correct: true },
-            { text: 'function:myFunction()', correct: false },
-            { text: 'function => myFunction()', correct: false },
+            { text: 'getLength()', correct: false },
+            { text: 'length()  ', correct: true },
+            { text: 'len()', correct: false },
+            { text: 'getSize()', correct: false },
         ],
     },
     {
-        question: 'How do you call a function named "myFunction"?',
+        question: 'Which operator is used to add together two values?',
         answers: [
-            { text: 'call myFunction()', correct: false },
-            { text: 'myFunction()', correct: true },
-            { text: 'call function myFunction()', correct: false },
-            { text: 'call function ()', correct: false },
+            { text: 'The * sign', correct: false },
+            { text: 'The + sign  ', correct: true },
+            { text: 'The & sign', correct: false },
+            { text: 'The / sign', correct: false },
         ],
     },
     {
-        question: 'How to write an IF statement in JavaScript?',
+        question: 'Which method can be used to return a string in upper case letters?',
         answers: [
-            { text: 'if i === 5 then', correct: false },
-            { text: 'if i = 5 then', correct: false },
-            { text: 'if (i === 5)', correct: true },
-            { text: 'if i = 5', correct: false },
+            { text: 'touppercase()', correct: false },
+            { text: 'upperCase()', correct: false },
+            { text: 'toUpperCase()  ', correct: true },
+            { text: 'tuc()', correct: false },
         ],
     },
     {
-        question: 'What is the correct way to write a JavaScript array?',
+        question: 'How do you create a method in Java?',
         answers: [
-            { text: 'let colors = (1:"red", 2:"blue")', correct: false },
-            { text: 'let colors = ("red", "blue")', correct: false },
-            { text: 'let colors = ["red", "blue"]', correct: true },
-            { text: 'let colors = (["red", "blue"])', correct: false },
+            { text: 'methodName.', correct: false },
+            { text: 'methodName[]', correct: false },
+            { text: 'methodName()  ', correct: true },
+            { text: '(methodName)', correct: false },
         ],
     },
     {
-        question: 'How do you round the number 7.25, to the nearest integer?',
+        question: 'How do you call a method in Java?',
         answers: [
-            { text: 'Math.round(7.25)', correct: true },
-            { text: 'round(7.25)', correct: false },
-            { text: 'Math.rnd(7.25)', correct: false },
-            { text: 'rnd(7.25)', correct: false },
+            { text: 'methodName();  ', correct: true },
+            { text: '(methodName);', correct: false },
+            { text: 'methodName;', correct: false },
+            { text: 'methodName[];', correct: false },
         ],
     },
     {
-        question: 'How do you declare a JavaScript variable?',
+        question: 'Which keyword is used to create a class in Java?',
         answers: [
-            { text: 'variable carName', correct: false },
-            { text: 'var carName', correct: true },
-            { text: 'v carName', correct: false },
-            { text: 'let carName', correct: true },
+            { text: 'class()', correct: false },
+            { text: 'class  ', correct: true },
+            { text: 'MyClass', correct: false },
+            { text: 'className', correct: true },
         ],
     },
     {
-        question: 'Which event occurs when the user clicks on an HTML element?',
+        question: 'Which keyword is used to return a value inside a method?',
         answers: [
-            { text: 'onmouseclick', correct: false },
-            { text: 'onchange', correct: false },
-            { text: 'onclick  ', correct: true },
-            { text: 'onmouseover', correct: false },
+            { text: 'break', correct: false },
+            { text: 'void', correct: false },
+            { text: 'return', correct: true },
+            { text: 'break', correct: false },
         ],
     },
 ];
@@ -113,6 +113,7 @@ const container = document.querySelector('.container');
 const quizDisplay = document.querySelector('.quiz-display ');
 const quizButtons = document.querySelectorAll('.button');
 const info = document.querySelector('.info')
+const cssBtn = document.querySelector('.css')
 const homeBtn = document.querySelector('.home-btn')
 const backBtn = document.querySelector('.back-btn')
 

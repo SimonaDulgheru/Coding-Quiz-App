@@ -26,6 +26,13 @@ body {
 	margin: 25px 10px;
 	text-align: center;
 }
+
+.select-quiz {
+	font-size: 20px;
+	color: rgb(2, 150, 161);
+	font-weight: 600;
+	margin-top: 70px;
+}
 .choose-quiz {
 	display: flex;
 	flex-wrap: wrap;
@@ -33,14 +40,11 @@ body {
 	margin: 45px 0;
 }
 
-.react {
+.php {
 	background: rgb(0, 169, 221);
 	color: #000;
 }
-.css {
-	background-color: rgb(245, 101, 6);
-	color: rgb(207, 207, 207);
-}
+
 .js {
 	background-color: rgb(245, 221, 6);
 	color: #000;
@@ -60,13 +64,9 @@ body {
 }
 
 .container-mob {
-	/* width: 100%; */
 	max-width: 90%;
 	height: 110vh;
-	
 	margin: 0 auto;
-	/* margin-top: 30px; */
-	/* margin-bottom: 50px; */
 	text-align: center;
 	background: rgb(51, 51, 51);
 	border-radius: 5px;
@@ -87,7 +87,7 @@ body {
 	padding: 10px;
 	font-weight: 400;
 	font-size: 15px;
-	/* margin-bottom: 30px; */
+
 	border-radius: 5px;
 	border: 1px solid black;
 	margin-top: 30px;
@@ -146,7 +146,9 @@ body {
 .start-btn,
 .next-btn,
 .finish-btn,
-.restart-btn {
+.restart-btn,
+.home-btn,
+.back-btn {
 	-webkit-box-shadow: inset 0px 1px 40px 2px rgba(0, 174, 255, 1);
 	-moz-box-shadow: inset 0px 1px 40px 2px rgba(0, 174, 255, 1);
 	box-shadow: inset 0px 1px 40px 2px rgba(0, 174, 255, 1);
@@ -163,6 +165,7 @@ body {
 
 .controls {
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 }
@@ -207,6 +210,7 @@ body {
 	font-size: 20px;
 	margin-bottom: 10px;
 }
+
 #score-display {
 	display: flex;
 	justify-content: flex-end;
@@ -264,13 +268,12 @@ body {
 
 .title-quiz {
 	color: #fff;
+	font-size: 35px;
 }
 
 .container {
 	width: 80%;
-	margin: 0 auto;
-	margin-top: 50px;
-	margin-bottom: 50px;
+	margin: 50px auto;
 	text-align: center;
 	background: rgb(51, 51, 51);
 	border-radius: 5px;
@@ -281,10 +284,11 @@ body {
 .info {
 	color: rgb(194, 193, 193);
 	font-size:20px;
-	text-align: justify;
-	margin: 25px 10px;
+	margin: 25px 15px;
 	text-align: center;
 }
+
+
 .choose-quiz {
 	display: flex;
 	flex-wrap: wrap;
@@ -292,14 +296,18 @@ body {
 	margin: 45px 0;
 }
 
-.react {
-	background: rgb(0, 169, 221);
+.select-quiz {
+	font-size: 30px;
+	color: rgb(2, 150, 161);
+	font-weight: 600;
+	margin-top: 70px;
+}
+
+.php {
+	background: rgb(80, 136, 240);
 	color: #000;
 }
-.css {
-	background-color: rgb(245, 101, 6);
-	color: rgb(207, 207, 207);
-}
+
 .js {
 	background-color: rgb(245, 221, 6);
 	color: #000;
@@ -309,15 +317,15 @@ body {
 }
 
 .button {
-	border-radius: 75%;
-	width: 75px;
-	height: 75px;
+	border-radius: 85%;
+	width: 85px;
+	height: 85px;
 	border: 2px solid rgb(109, 109, 109);
 	font-weight: 700;
-	font-size: 15px;
+	font-size: 25px;
 	cursor: pointer;
-
 }
+
 .button:hover{
 	-webkit-box-shadow: inset 0px 1px 40px 2px rgba(5, 5, 5, 1);
 	-moz-box-shadow: inset 0px 1px 40px 2px rgba(5, 5, 5, 1);
@@ -366,7 +374,9 @@ body {
 }
 
 .btn:hover {
-	border-color: rgb(0, 0, 0);
+	-webkit-box-shadow: inset 0px 1px 40px 2px rgb(0, 42, 90);
+	-moz-box-shadow: inset 0px 1px 40px 2px rgb(0, 42, 90);
+	box-shadow: inset 0px 1px 40px 2px rgb(0, 42, 90);
 }
 
 .btn.correct {
@@ -385,14 +395,16 @@ body {
 .start-btn,
 .next-btn,
 .finish-btn,
-.restart-btn {
+.restart-btn,
+.home-btn,
+.back-btn  {
 	-webkit-box-shadow: inset 0px 1px 40px 2px rgba(0, 174, 255, 1);
 	-moz-box-shadow: inset 0px 1px 40px 2px rgba(0, 174, 255, 1);
 	box-shadow: inset 0px 1px 40px 2px rgba(0, 174, 255, 1);
 	font-size: 1.5rem;
 	font-weight: bold;
 	padding: 10px 20px;
-	margin: 25px 0;
+	margin: 10px 0;
 	width: 150px;
 }
 
@@ -402,6 +414,7 @@ body {
 
 .controls {
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 }

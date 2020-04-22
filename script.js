@@ -6,8 +6,9 @@ let finishBtn = document.getElementById('finish-btn');
 const quizButtons = document.querySelectorAll('.button');
 const info = document.querySelector('.info')
 const jsBtn = document.querySelector('.js')
-const reactBtn = document.querySelector('.react')
+const phpBtn = document.querySelector('.php')
 const javaBtn = document.querySelector('.java')
+
 
 
 window.onload = () =>
@@ -29,6 +30,14 @@ window.onload = () =>
 				element.classList.add('hide')
 			})
 		};
+	})
+	phpBtn.addEventListener('click', () =>
+	{
+		window.location.replace('./phpQuiz/php.html')
+	})
+	javaBtn.addEventListener('click', () =>
+	{
+		window.location.replace('./javaQuiz/java.html')
 	})
 
 };
