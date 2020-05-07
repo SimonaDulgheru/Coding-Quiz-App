@@ -1,67 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Quiz</title>
+		<link rel="stylesheet" href="../style.css" />
+	</head>
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Quiz</title>
-    <link rel="stylesheet" href="../style.css" />
-</head>
+	<body>
+		<section class="container container-mob">
+			<h1 class="title-quiz title-quiz-mob">
+				JavaScript Quiz
+			</h1>
+			<div class="message hide"></div>
+			<section class="quiz-display hide">
+				<div class="score-timer">
+					<div id="stopWatch">
+						<h2 class="timer">Timer</h2>
+						<p id="timer" class="hide"></p>
+					</div>
+					<div id="score-display">
+						<h2 class="score">Score</h2>
+						<p id="score"></p>
+					</div>
+				</div>
+				<div id="quiz-container" class="hide blur">
+					<div id="question" class="question-number">
+						<h3>
+							Question<span class="question-num-value"> 1</span>of
+							<span class="total-questions"></span>
+						</h3>
+					</div>
+					<div class="question"></div>
+					<div id="answers-btn " class="options"></div>
+				</div>
+			</section>
+			<div id="result" class="container-result hide"></div>
+			<section class="controls">
+				<button id="start-btn" class="start-btn btn">
+					Start
+				</button>
+				<button id="back-btn" class="back-btn btn">
+					Back
+				</button>
+				<button id="next-btn" class="next-btn btn hide">
+					Next
+				</button>
+				<button id="restart-btn" class="restart-btn btn hide">
+					Restart
+				</button>
+				<button id="finish-btn" class="finish-btn btn hide">
+					Finish
+				</button>
+				<button class="home-btn btn hide">Home</button>
+			</section>
+		</section>
 
-<body>
-    <div class="container container-mob">
-        <h1 class="title-quiz title-quiz-mob">JavaScript Coding Quiz</h1>
-
-        <div class="message hide"></div>
-        <div class="quiz-display hide">
-            <div class="score-timer">
-                <section id="stopWatch">
-                    <h2 class="timer">Timer</h2>
-                    <p id="timer" class="hide"></p>
-                </section>
-
-                <section id="score-display">
-                    <h2 class="score">Score</h2>
-                    <p id="score"></p>
-                </section>
-            </div>
-
-            <div id="quiz-container" class="hide">
-                <div id="question" class="question-number">
-                    <h3>
-                        Question<span class="question-num-value"> 1</span>of
-                        <span class="total-questions"></span>
-                    </h3>
-
-                </div>
-                <div class="question"></div>
-
-                <div id="answers-btn " class="options"></div>
-            </div>
-
-        </div>
-        <div id="result" class="container-result hide"></div>
-
-        <div class="controls">
-            <button id="start-btn" class="start-btn btn hide">
-                Start
-            </button>
-
-            <button id="next-btn" class="next-btn btn hide">Next</button>
-            <button id="restart-btn" class="restart-btn btn hide">
-                Restart</button>
-            <button id="finish-btn" class="finish-btn btn hide">
-                Finish</button>
-            <button class="home-btn btn hide">Home</button>
-            <button id="back-btn" class="back-btn btn">
-                Back</button>
-        </div>
-    </div>
-
-    <script src="javascript.js"></script>
-
-
-
-</body>
-
+		<script src="javascript.js"></script>
+	</body>
 </html>

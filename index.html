@@ -1,75 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Coding Quiz</title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
 
-<head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Quiz</title>
-	<link rel="stylesheet" href="style.css" />
-</head>
-
-<body>
-	<div class="container container-mob">
-		<h1 class="title-quiz title-quiz-mob">Coding Quiz</h1>
-		<p class="info hide">This quiz consists of 10 single and multiple-choice questions. Read each question
-			carefully, and
-			click on the
-			button next for next question.The total score for the quiz is based on your responses to all questions.
-			You'll have 40 seconds for each test.</p>
-		<p class="select-quiz">Select your Quiz</p>
-		<div class="choose-quiz">
-			<button class="js button hide">JS</button>
-			<button class="php button hide">PHP</button>
-			<button class="java button hide">Java</button>
-		</div>
-		<div class="message hide"></div>
-		<div class="quiz-display hide">
-			<div class="score-timer">
-				<section id="stopWatch">
-					<h2 class="timer">Timer</h2>
-					<p id="timer" class="hide"></p>
-				</section>
-
-				<section id="score-display">
-					<h2 class="score">Score</h2>
-					<p id="score"></p>
-				</section>
-			</div>
-			<div id="quiz-container" class="hide">
-				<div id="question" class="question-number">
-					<h3>
-						Question<span class="question-num-value"> 1</span>of
-						<span class="total-questions"></span>
-					</h3>
-
-				</div>
-				<div class="question"></div>
-
-				<div id="answers-btn " class="options"></div>
-			</div>
-
-		</div>
-		<div id="result" class="container-result hide"></div>
-
-		<div class="controls">
-			<button id="start-btn" class="start-btn btn hide">
-				Start
-			</button>
-
-			<button id="next-btn" class="next-btn btn hide">Next</button>
-			<button id="restart-btn" class="restart-btn btn hide">
-				Restart</button>
-			<button id="finish-btn" class="finish-btn btn hide">
-				Finish</button>
-			<button id="back-btn" class="back-btn btn hide">
-				Back</button>
-
-		</div>
-	</div>
-
-	<!-- <script src="cssQuiz/cssQuiz.js"></script> -->
-	<script src="script.js"></script>
-
-</body>
-
+	<body>
+		<section class="container container-mob">
+			<h1 class="title-quiz title-quiz-mob">Coding Quiz</h1>
+			<p class="info">
+				This quiz consists of 10 single and multiple-choice questions.
+			</p>
+			<p class="info">
+				Read each question carefully, and click on the button next for
+				next question.The total score for the quiz is based on your
+				responses to all questions.
+			</p>
+			<p class="info">
+				You'll have 40 seconds for each test.
+			</p>
+			<p class="info">
+				<span><strong>Good luck!</strong></span>
+			</p>
+			<p class="select-quiz">Select your Quiz</p>
+			<section class="choose-quiz">
+				<button class="js button hide">JS</button>
+				<button class="php button hide">PHP</button>
+				<button class="java button hide">Java</button>
+			</section>
+		</section>
+		<script src="script.js"></script>
+	</body>
 </html>
