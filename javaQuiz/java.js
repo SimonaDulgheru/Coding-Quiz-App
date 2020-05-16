@@ -181,6 +181,7 @@ function setTime() {
 
 const showMessage = () => {
 	if (secondsLeft === 0) {
+		backBtn.classList.remove("hide");
 		scoreResult.classList.remove("hide");
 		scoreResult.textContent = `Your score is ${score}`;
 		const alertBox = document.createElement("p");

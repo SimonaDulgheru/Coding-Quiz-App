@@ -169,6 +169,7 @@ function setTime() {
 			shuffledQuestions.length == questionIndex + 1
 		) {
 			showMessage();
+
 			clearInterval(timerSeconds);
 		}
 	}, 1000);
@@ -176,6 +177,7 @@ function setTime() {
 
 const showMessage = () => {
 	if (secondsLeft === 0) {
+		homeBtn.classList.remove("hide");
 		scoreResult.classList.remove("hide");
 		scoreResult.textContent = `Your score is ${score}`;
 		const alertBox = document.createElement("p");
