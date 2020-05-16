@@ -187,6 +187,11 @@ const showMessage = () => {
 		quizDisplay.classList.add("hide");
 		restartBtn.classList.remove("hide");
 		nextBtn.classList.add("hide");
+		homeBtn.addEventListener("click", () => {
+			{
+				window.location.replace("../index.html");
+			}
+		});
 	}
 };
 
