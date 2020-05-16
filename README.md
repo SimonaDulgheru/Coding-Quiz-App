@@ -14,7 +14,7 @@ With Coding Quiz App you can test your knowledge of various programming language
 
 ### [Live Preview](https://simonadulgheru.github.io/Coding-Quiz-App/)
 
-![quiz-preview](https://user-images.githubusercontent.com/48987979/82119928-3f2dec80-977a-11ea-95e3-eca32b46890b.jpg)
+![quiz-preview](https://user-images.githubusercontent.com/48987979/82120114-bfa11d00-977b-11ea-9bdb-d8c16acc8979.jpg)
 
 ## Stack Used
 
